@@ -10,11 +10,10 @@ def hello_world():
         pattern = request.form['pattern']
         if not pattern:
             error = 'A pattern is required.'
-
         try:
             result = check_if_is_balanced(pattern)
         except:
             flash("There was an error, refresh the page and try again please.")
         flash(result)
-        # flash(error)
+        flash(error)
     return render_template('home.html')
